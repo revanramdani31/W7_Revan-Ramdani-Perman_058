@@ -2,8 +2,9 @@
 /* Deskripsi   : Body ADT stack yang diimplementasikan dgn linked list */
 /* Dibuat oleh : Ade Chandra Nugraha*/
 
-#include "stack.h"
-#include "Linked_list.h"
+#include "STACK.h"
+#include "LinkedList.h"
+
 
 /**** Perubahan nilai komponen struktur ****/
 void SetTop (Stack *S, Stack NewTop )
@@ -19,12 +20,14 @@ void CreateEmpty (Stack *S)
 /* FS : Membuat sebuah stack S yang kosong */
 /* Ciri stack kosong : TOP bernilai NULL */
 {
-	S->First = NULL;
+	*S = NULL;
 }
 
 /**** Predikat untuk test keadaan KOLEKSI ****/
-boolean IsEmpty(Stack S) {
-    return ListEmpty(S);
+boolean IsEmpty (Stack S)
+/* Mengirim true jika Stack Kosong */
+{
+	return (isEmpty(S));
 }
 
 /**** Menambahkan sebuah elemen ke Stack ****/
@@ -45,3 +48,22 @@ void Pop (Stack *S, infotype *X)
 	DelVFirst(&(*S), &(*X)); // nama modul disesuaikan dengan pseudocode linked list pribadi
 }
 
+void ConvertToBinary(int decimal) {
+    Stack S;
+    CreateEmpty(&S);
+    
+    // Konversi ke biner menggunakan stack
+    while (decimal > 0) {
+        Push(&S, decimal % 2);
+        decimal /= 2;
+    }
+    
+    // Cetak hasil biner dengan pop dari stack
+    printf("Hasil konversi biner: ");
+    while (!IsEmpty(S)) {
+        int bit;
+        Pop(&S, (infotype*)&bit);
+        printf("%d", bit);
+    }
+    printf("\n");
+}

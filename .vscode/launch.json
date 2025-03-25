@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/ASUS/OneDrive/문서/semester 2/Struktur Data & Algoritma Semester 2/W7",
-      "program": "c:/Users/ASUS/OneDrive/문서/semester 2/Struktur Data & Algoritma Semester 2/W7/build/Debug/outDebug",
+      "cwd": "c:/stack/Stack _ v25",
+      "program": "c:/stack/Stack _ v25/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

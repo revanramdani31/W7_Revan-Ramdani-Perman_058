@@ -5,12 +5,16 @@
 
 #ifndef stack_H
 #define stack_H
-#include "Linked_list.h"
-#include "boolean.h"  //nama header disesuaikan dengan program linked list pribadi
+#include "LinkedList.h"  //nama header disesuaikan dengan program linked list pribadi
+#include "BOOLEAN.H"
+#include <stdbool.h>
+
 
 /* Null adalah stack dengan elemen kosong. */
 /* Contoh deklarasi variabel bertype stack dengan ciri TOP bertype address (Head)*/
-typedef List Stack ;
+typedef address Stack ;
+typedef List Stack;
+
 
 /**** Perubahan nilai komponen struktur ****/
 void SetTop (Stack *S, Stack NewTop );
@@ -38,6 +42,8 @@ void Pop (Stack *S, infotype *X);
 /* Menghapus X dari Stack S */
 /* IS : S tidak mungkin kosong */
 /* FS : X adalah nilai elemen TOP yang lama, TOP berkurang 1 */
+
+void ConvertToBinary(int decimal);
 
 #endif
 

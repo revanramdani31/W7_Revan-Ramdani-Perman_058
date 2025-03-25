@@ -24,7 +24,7 @@ void CreateList (List * L)
 
 /**** Manajemen Memory ****/
 address Alokasi(infotype X) {
-    address P = (address) malloc(sizeof(ElmtList)); // Pastikan malloc digunakan
+    address P = (address) malloc(sizeof(ElmtList));
     if (P != NULL) {
         P->info = X;
         P->next = NULL;
@@ -124,24 +124,16 @@ address SearchPrec (List L, infotype X)
 
 /**** PRIMITIF BERDASARKAN NILAI ****/
 /**** Penambahan Elemen ****/
-void InsVFirst (Stack * L, infotype *X){
-	 /* Kamus Lokal */
-	 address P = Alokasi(X);
-	 /* Algoritma */
-    if (!IsEmpty(*L)) { // Pastikan stack tidak kosong
-        P = First(*L);
-        *X = P->info; // Simpan nilai sebelum dealokasi
-        First(*L) = P->next;
-        free(P); // Bebaskan memori
+void InsVFirst(Stack *L, infotype X) {
+    address P = Alokasi(X);
+    if (P != NULL) {
+        InsertFirst(L, P);
     }
 }
 
-void InsertFirst (Stack * L, address P){
-    if (!IsEmpty(*L)) { // Pastikan stack tidak kosong
-        P = First(*L);
-        First(*L) = P->next;
-        free(P); // Bebaskan memori
-    }
+void InsertFirst(Stack *L, address P) {
+    P->next = First(*L);
+    First(*L) = P;
 }
 
 void InsVLast (List * L, infotype X){
